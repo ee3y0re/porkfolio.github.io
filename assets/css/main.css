@@ -2287,6 +2287,16 @@ input, select, textarea {
 			font-size: 3em;
 		}
 
+    #piggy-container {
+      display: inline-block;
+      height: 101.25px;
+      width: 90px;
+    }
+
+    #piggy-container svg {
+      fill: #fff;
+    }
+
 		#hero strong {
 			color: inherit;
 		}
