@@ -662,6 +662,10 @@
 		padding: 6em 0 6em 0;
 	}
 
+  .icons-list {
+    display: flexbox;
+  }
+
 	#footer-wrapper {
 		-webkit-transform: translate3d(0, 0, 0);
 		position: relative;
@@ -1246,6 +1250,16 @@
 			html, body {
 				overflow-x: hidden;
 			}
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      @media screen and (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
 
 			body, input, textarea, select {
 				font-size: 13pt;
