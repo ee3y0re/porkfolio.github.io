@@ -3111,3 +3111,10 @@ input, select, textarea {
 .fab {
   font-size: 4em;
 }
+
+#social-icons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  /* flex-direction: row; */
+}
