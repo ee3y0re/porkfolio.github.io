@@ -3090,6 +3090,14 @@ input, select, textarea {
   align-items: center;
 }
 
-.lang-list > li {
+.lang-list {
   list-style: none;
+}
+.icon-list-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.fab {
+  font-size: 4em;
 }
