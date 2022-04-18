@@ -3098,6 +3098,16 @@ input, select, textarea {
   justify-content: space-around;
 }
 
+.icon-title {
+  margin: 0;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .fab {
   font-size: 4em;
 }
