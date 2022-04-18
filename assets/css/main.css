@@ -2121,6 +2121,7 @@ input, select, textarea {
 		color: #fff;
 		text-align: center;
 		padding: 6em 0 6em 0;
+    width: 100%;
 	}
 
 	#footer-wrapper {
@@ -3059,6 +3060,7 @@ input, select, textarea {
 		/* Promo */
 
 			#promo {
+        width: 100%;
 				padding: 20px;
 			}
 
@@ -3096,6 +3098,8 @@ input, select, textarea {
 .icon-list-container {
   display: flex;
   justify-content: space-around;
+  /* enables icons to move to fit according to mobile screen size */
+  flex-wrap: wrap;
 }
 
 .icon-title {
