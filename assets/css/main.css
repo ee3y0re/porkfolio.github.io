@@ -3086,6 +3086,13 @@ input, select, textarea {
 
 
   /* Abby's edits */
+
+#profile-pic-container > img {
+  height: 249px;
+  border-radius: 20px;
+  border: 1px solid white;
+}
+
 #recommendations {
   display: flexbox;
   flex-direction: column;
@@ -3120,5 +3127,4 @@ input, select, textarea {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  /* flex-direction: row; */
 }
