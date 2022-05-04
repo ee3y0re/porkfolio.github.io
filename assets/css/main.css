@@ -3124,7 +3124,17 @@ input, select, textarea {
 }
 
 #social-icons {
+  width: 100%;
+}
+
+#flex-icons {
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+
+#flex-icons > li {
+  height: 75px;
+  padding-left: 0;
+  margin: 0
 }
