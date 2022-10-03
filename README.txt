@@ -10,6 +10,7 @@ Credits:
 
 	Icons:
 		Font Awesome (fontawesome.io)
+		Icons8 (icons8.com/icons/set/pig)
 
 	Other:
 		jQuery (jquery.com)
