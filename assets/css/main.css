@@ -2566,8 +2566,6 @@ input, select, textarea {
 			text-rendering: auto;
 			line-height: 1;
 			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
-			font-weight: 400;
 		}
 
 		.icon > .label {
@@ -2578,10 +2576,6 @@ input, select, textarea {
 			line-height: inherit;
 		}
 
-		.icon.solid:before {
-			font-weight: 900;
-		}
-
 		.icon.brands:before {
 			font-family: 'Font Awesome 5 Brands';
 		}
@@ -2589,9 +2583,9 @@ input, select, textarea {
 		.icon.style2:before {
 			border-radius: 2.75em;
 			display: inline-block;
-			height: 2.75em;
-			line-height: 2.75em;
-			width: 2.75em;
+      height: 1.75em;
+      line-height: 1.75em;
+      width: 1.75em;
 		}
 
 		.icon.major {
@@ -2600,7 +2594,7 @@ input, select, textarea {
 		}
 
 			.icon.major:before {
-				font-size: 1.25rem;
+				font-size: 4.25rem;
 			}
 
 	a.icon.style2:before {
