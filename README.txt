@@ -11,7 +11,7 @@ Credits:
 	Icons:
 		Font Awesome (fontawesome.io)
 		Icons8 (icons8.com/icons/set/pig)
-		Devcon (https://devicon.dev/)
+		Devcon (devicon.dev/)
 
 	Other:
 		jQuery (jquery.com)
