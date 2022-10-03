@@ -2623,6 +2623,10 @@ input, select, textarea {
 		color: #47D3E5;
 	}
 
+  .fa-paint-brush:before,  .fa-bacon:before {
+    color: #e47c74;
+  }
+
 /* Image */
 
 	.image {
