@@ -3500,10 +3500,10 @@ input, select, textarea {
 				object-position: center;
 				display: block;
 				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
+        top: 20%;
+        left: 20%;
+        width: 60%;
+        height: 60%;
 				border-radius: 0;
 			}
 
@@ -4428,6 +4428,10 @@ input, select, textarea {
 	.banner.style4.invert.android .image:after {
 		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='64px' height='32px' viewBox='0 0 64 32' zoomAndPan='disable'%3E%3Cstyle%3Erect %7Bfill: transparent%3B stroke: white%3B stroke-width: 1px%3B %7D%3C/style%3E%3Crect rx='4' ry='4' x='6' y='4' width='52' height='24' vector-effect='non-scaling-stroke' /%3E%3C/svg%3E");
 	}
+
+  #o-pig {
+    width: 2rem;
+  }
 
 /* Spotlight (transitions) */
 
