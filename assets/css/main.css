@@ -1764,6 +1764,9 @@ input, select, textarea {
 		}
 
 /* Section/Article */
+  #o-pig {
+    width: 2.8125rem;
+  }
 
 	section.special, article.special {
 		text-align: center;
