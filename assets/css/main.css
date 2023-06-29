@@ -2771,6 +2771,10 @@ input, select, textarea {
         visibility: hidden;
       }
 
+			.tiles article header:hover {
+				visibility: hidden;
+			}
+
 			.tiles article h3 {
 				font-size: 1.75em;
 			}
@@ -2806,6 +2810,7 @@ input, select, textarea {
 			}
 
 			.tiles article:after {
+				background-color: rgba(36, 41, 67, 0.25);
 				content: '';
 				display: block;
 				height: 100%;
@@ -2817,6 +2822,10 @@ input, select, textarea {
 			}
 
 			.tiles article:hover:before {
+				opacity: 0;
+			}
+
+      .tiles article:hover:after {
 				opacity: 0;
 			}
 
