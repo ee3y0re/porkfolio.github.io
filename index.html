@@ -238,6 +238,20 @@
                 ><span class="label">LinkedIn</span></a
               >
             </li>
+            <li>
+              <a onclick="copyEmailtoKeyboard()" class="icon solid alt fa-envelope"
+                >
+                <script>
+                  function copyEmailtoKeyboard() {
+                    navigator.clipboard.writeText("ajoyvmon@gmail.com").then(
+                      () => { alert("Copy Abby's email successful") }, 
+                      () => { alert("Copy Abby's email failed") }
+                    )
+                  }
+                </script>
+                <span class="label">Email</span></a
+              >
+            </li>
           </ul>
           <ul class="copyright">
             <li>&copy; Untitled</li>
