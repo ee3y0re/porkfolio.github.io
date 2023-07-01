@@ -2344,6 +2344,7 @@ input, select, textarea {
 			}
 
   ul.actions.icons {
+    margin-left: 0;
     flex-wrap: wrap;
   }
 
