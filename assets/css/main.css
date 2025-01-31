@@ -2358,7 +2358,7 @@ input, select, textarea {
 
 		ul.icons li {
 			display: inline-block;
-			padding: 0 1em 0 0;
+			padding: 1em 1em 0 0;
 		}
 
 			ul.icons li:last-child {
@@ -2368,7 +2368,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			ul.icons li {
-				padding: 0 0.75em 0 0;
+				padding: 0.75em 0.75em 0 0;
 			}
 
 		}
@@ -2377,7 +2377,7 @@ input, select, textarea {
     font-size: 2rem;
   }
   
-  svg {
+  svg, i {
     background-color: #ffffff;
     border-radius: 100%;
     color: #242943;
