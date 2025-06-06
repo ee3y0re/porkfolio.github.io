@@ -211,7 +211,7 @@ select,
 textarea {
   color: #4c5357;
   font-family: "Open Sans", sans-serif;
-  font-size: 13pt;
+  font-size: 17pt;
   font-weight: 400;
   line-height: 1.65;
 }
@@ -220,7 +220,7 @@ textarea {
   input,
   select,
   textarea {
-    font-size: 11pt;
+    font-size: 16pt;
   }
 }
 @media screen and (max-width: 1280px) {
@@ -228,7 +228,7 @@ textarea {
   input,
   select,
   textarea {
-    font-size: 10pt;
+    font-size: 15pt;
   }
 }
 @media screen and (max-width: 360px) {
@@ -236,7 +236,7 @@ textarea {
   input,
   select,
   textarea {
-    font-size: 9pt;
+    font-size: 14pt;
   }
 }
 
@@ -2277,7 +2277,6 @@ button:disabled,
   display: -ms-flex;
   display: flex;
   position: relative;
-  width: calc(50% - 3em);
   gap: 0.5rem;
 }
 .features article:nth-child(2n - 1) {
@@ -2866,6 +2865,37 @@ button:disabled,
     width: 5em;
   }
 }
+@media screen and (max-width: 480px) {
+  #sidebar {
+    width: calc(100% - 4em);
+  }
+
+  #sidebar > .inner {
+    width: calc(100% - 4em);
+  }
+
+  #sidebar .toggle {
+    text-indent: 7.25em;
+    width: 7.25em;
+  }
+  #sidebar .toggle:before {
+    color: #4c5357;
+    margin-inline-start: -0.0625em;
+    margin-top: -0.25em;
+    font-size: 1.1rem;
+    z-index: 1;
+  }
+  #sidebar .toggle:after {
+    background: rgba(222, 225, 226, 0.75);
+    border-radius: 0.375em;
+    content: "";
+    height: 3.5em;
+    left: 1em;
+    position: absolute;
+    top: 1em;
+    width: 5em;
+  }
+}
 
 /* Header */
 #header {
@@ -2900,7 +2930,7 @@ button:disabled,
 }
 @media screen and (max-width: 736px) {
   #header {
-    padding-top: 6.5em;
+    padding-top: 4.5em;
   }
   #header .logo {
     font-size: 1.25em;
@@ -2917,7 +2947,6 @@ button:disabled,
 
 /* Banner */
 #banner {
-  position: relative;
   padding: 6em 0 4em 0;
   display: -moz-flex;
   display: -webkit-flex;
@@ -2948,22 +2977,20 @@ button:disabled,
   -ms-flex-shrink: 0;
   flex-shrink: 0;
   display: block;
-  margin: 0 0 2em;
-  width: 15%;
-  position: relative;
+  margin: 0 0 2em 4em;
+  width: 50%;
 }
 #banner .image img {
-  position: relative;
   height: 100%;
-  width: 100%;
   -moz-object-fit: cover;
   -webkit-object-fit: cover;
   -ms-object-fit: cover;
   object-fit: cover;
-  -moz-object-position: top;
-  -webkit-object-position: top;
-  -ms-object-position: top;
-  object-position: top;
+  -moz-object-position: center;
+  -webkit-object-position: center;
+  -ms-object-position: center;
+  object-position: center;
+  width: 100%;
 }
 .wrap-profile {
   display: flex;
@@ -3008,9 +3035,11 @@ button:disabled,
     -webkit-flex-shrink: 0;
     -ms-flex-shrink: 0;
     flex-shrink: 0;
-    margin: 0 0 2em 0;
-    width: 50%;
-    flex-shrink: 1;
+    margin: 0 0 4em 0;
+    height: 25em;
+    max-height: 50vh;
+    min-height: 18em;
+    width: 100%;
   }
 }
 @media screen and (orientation: portrait) and (max-width: 480px) {
