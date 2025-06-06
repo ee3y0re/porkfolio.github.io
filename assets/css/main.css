@@ -2695,7 +2695,10 @@ button:disabled,
   transition: margin-inline-start 0.5s ease, box-shadow 0.5s ease;
   background-color: #f5f6f7;
   font-size: 0.9em;
-  position: relative;
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
   width: 26em;
 }
 #sidebar h2 {
@@ -2774,33 +2777,33 @@ button:disabled,
 #sidebar.inactive {
   margin-inline-start: -26em;
 }
-@media screen and (max-width: 1680px) {
-  #sidebar {
-    width: 24em;
-  }
-  #sidebar > .inner {
-    padding: 1.66667em 1.66667em 1.33333em 1.66667em;
-    width: 24em;
-  }
-  #sidebar > .inner > .alt {
-    margin: -1.66667em 0 3.33333em -1.66667em;
-    padding: 1.66667em;
-    width: calc(100% + 3.33333em);
-  }
-  #sidebar .toggle {
-    height: 6.25em;
-    left: 24em;
-    line-height: 6.25em;
-    text-indent: 5em;
-    width: 5em;
-  }
-  #sidebar .toggle:before {
-    font-size: 1.5rem;
-  }
-  #sidebar.inactive {
-    margin-inline-start: -24em;
-  }
+
+#sidebar {
+  width: 24em;
 }
+#sidebar > .inner {
+  padding: 1.66667em 1.66667em 1.33333em 1.66667em;
+  width: 24em;
+}
+#sidebar > .inner > .alt {
+  margin: -1.66667em 0 3.33333em -1.66667em;
+  padding: 1.66667em;
+  width: calc(100% + 3.33333em);
+}
+#sidebar .toggle {
+  height: 6.25em;
+  left: 24em;
+  line-height: 6.25em;
+  text-indent: 5em;
+  width: 5em;
+}
+#sidebar .toggle:before {
+  font-size: 1.5rem;
+}
+#sidebar.inactive {
+  margin-inline-start: -24em;
+}
+
 @media screen and (max-width: 1280px) {
   #sidebar {
     box-shadow: 0 0 5em 0 rgba(0, 0, 0, 0.175);
@@ -2967,11 +2970,11 @@ button:disabled,
   gap: 1rem;
 }
 #banner .image::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('../../images/pic10.jpg');
+  background-image: url("../../images/pic10.jpg");
   z-index: 1;
   opacity: 20%;
 }
