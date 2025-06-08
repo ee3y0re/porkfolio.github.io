@@ -6,13 +6,45 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-html,
+/*
+=============================================
+Global Reset + Typography + Accessibility + Localization Friendly
+For use across: Portfolio + Work Projects (Enterprise / Gov / Stable)
+Built from:
+- Modern best practices
+- WCAG AAA typography guidance
+- Cross-platform safe fallbacks
+- Logical properties for better i18n / RTL friendliness
+- Legacy browser support (IE10+, early Safari, Android)
+-- THE PRODUCT OF ASKING AND ARGUING WITH CHATGPT
+=============================================
+*/
+
+/* 
+1️⃣ 
+Box sizing model → makes box layout more intuitive
+Padding & border are included in declared width/height → avoids layout bugs.
+Modern Flex/Grid expects border-box.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2️⃣ Remove default padding from classed lists
+When using ul[class] or ol[class], we are intentionally styling the list → start clean.
+*/
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* 3️⃣ Remove default margin from common block elements
+Gives full control over spacing → no browser-default "mystery" margins.
+We'll add back logical spacing later (see below).
+*/
 body,
-div,
-span,
-applet,
-object,
-iframe,
 h1,
 h2,
 h3,
@@ -20,144 +52,323 @@ h4,
 h5,
 h6,
 p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
+ul[class],
+ol[class],
 li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
 figure,
 figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+blockquote,
+dl,
+dd {
   margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  scroll-behavior: smooth;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
+/* 4️⃣ Core body defaults
+Min height → ensures body always fills viewport height.
+Smooth scrolling → nicer experience.
+Optimize text rendering for speed.
+Font smoothing improves font clarity on macOS/Windows/Linux.
+Line height improves readability across text blocks.
+System font stack is fast, accessible, and consistent across OSes.
+Isolation ensures root stacking context → avoids z-index bugs.
+*/
 body {
-  line-height: 1;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-font-smoothing: antialiased;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  isolation: isolate;
 }
 
-ol,
-ul {
+/* 5️⃣ List styles
+When using ul[class] or ol[class], start with no list marker → gives designer full control.
+*/
+ul[class],
+ol[class] {
   list-style: none;
 }
 
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
+/* 6️⃣ Anchor links without classes
+Skip ink improves readability on underlines.
+Add -webkit- prefix for older WebKit browsers.
+*/
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
 }
 
+/* 7️⃣ Images/media elements
+Prevent media from overflowing their containers.
+Forces block display → avoids inline space bugs.
+Adds logical sizing for localization and layout consistency.
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  max-inline-size: 100%;
+  block-size: auto;
+  display: block;
+}
+
+/* 8️⃣ Article flow
+Adds vertical rhythm between article children → ensures content doesn't "smash" together.
+Logical margin used → RTL and writing mode safe.
+*/
+article > * + *, article > *:first-of-type {
+  margin-block-start: 1em;
+}
+
+/* 9️⃣ Inherit font and color for form controls
+Prevent ugly "system UI" fonts on inputs/buttons → consistent typography.
+Inherit text color for better theming.
+Also remove native appearance and support directionality/localization.
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  direction: inherit;
+  unicode-bidi: plaintext;
+}
+
+/* 🔁 Placeholder styles across browsers
+Ensures consistent placeholder visibility and color.
+*/
+::placeholder {
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: inherit;
+}
+::-ms-input-placeholder {
+  color: inherit;
+}
+::-webkit-input-placeholder {
+  color: inherit;
+}
+
+/* 🔟 Prevent text overflows in headings & paragraphs
+overflow-wrap and word-wrap → safe fallback for older browsers.
+text-wrap → better line balance for large headings.
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  text-wrap: balance;
+}
+
+/* 11️⃣ Pretty line wrapping for paragraphs → improves readability in long-form content. */
+p {
+  text-wrap: pretty;
+}
+
+/* 12️⃣ Respect prefers-reduced-motion
+Critical for a11y → avoids nausea / dizziness in sensitive users.
+Forces all animations to be effectively "off" if user prefers it.
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 13️⃣ Button defaults
+Cursor pointer → makes buttons clearly interactive.
+No background/border by default → gives full design control.
+Includes IE7 inline-block fallback.
+*/
+button,
+input[type="submit"],
+input[type="reset"] {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+/* 14️⃣ Table defaults
+Collapse borders → avoids double lines.
+100% width by default → prevents partial-width tables by mistake.
+*/
 table {
   border-collapse: collapse;
-  border-spacing: 0;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding-block: 0.5em;
+  padding-inline: 0.75em;
+}
+
+/* 15️⃣ Default spacing for headings and paragraphs
+Using logical properties → works correctly in LTR, RTL, vertical writing modes.
+Spacing consistent with WCAG AAA recommendations for readability.
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
+/* 16️⃣ Responsive, AAA-friendly font sizes using clamp
+Clamp syntax: clamp(MIN, PREFERRED, MAX)
+- MIN: smallest allowed font size (ensures readability on small devices)
+- PREFERRED: a fluid, viewport-width-based size for responsiveness
+- MAX: largest allowed font size (prevents overly large text on huge screens)
+This approach provides scalable typography without JavaScript,
+maintains WCAG AAA legibility standards,
+and adjusts gracefully between device sizes.
+*/
+html {
+  font-size: clamp(1rem, 1.1vw + 0.5rem, 1.25rem);
 }
 
 body {
-  -webkit-text-size-adjust: none;
+  line-height: 1.6;
 }
 
-mark {
-  background-color: transparent;
-  color: #e0e0e0;
+h1 {
+  font-size: clamp(2rem, 2vw + 1rem, 3rem);
+  /* Larger headings scale fluidly:
+     - Minimum 2rem ensures visibility on small screens
+     - 2vw + 1rem allows size to increase with viewport width
+     - Maximum 3rem caps size on very large displays */
+  line-height: 1.2;
 }
 
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+h2 {
+  font-size: clamp(1.75rem, 1.75vw + 0.5rem, 2.5rem);
+  line-height: 1.3;
 }
 
-input,
-select,
-textarea {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
+h3 {
+  font-size: clamp(1.5rem, 1.5vw + 0.5rem, 2rem);
+  line-height: 1.4;
 }
+
+h4 {
+  font-size: clamp(1.25rem, 1.25vw + 0.5rem, 1.75rem);
+  line-height: 1.4;
+}
+
+h5,
+h6 {
+  font-size: clamp(1.125rem, 1vw + 0.5rem, 1.5rem);
+  line-height: 1.5;
+}
+
+/* 17️⃣ List indent using logical properties
+Works in LTR and RTL layouts → no hardcoded left padding.
+*/
+ul,
+ol {
+  padding-inline-start: 1.5em;
+}
+
+/* 18️⃣ Blockquote styling with logical properties
+Safe for RTL and vertical writing modes → no hardcoded left border or padding.
+*/
+blockquote {
+  margin-inline: 1em;
+  padding-inline-start: 1em;
+  border-inline-start: 4px solid currentColor;
+}
+
+/* 19️⃣ Focus-visible outlines for accessibility
+Ensures keyboard focus is clearly visible, improving usability.
+*/
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* 20️⃣ Visually hidden helper class for screen readers
+Content hidden visually but accessible for assistive tech.
+*/
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* 21️⃣ HTML5 semantic elements display fix for legacy browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* 22️⃣ Direction utility classes for LTR/RTL switching */
+.ltr {
+  direction: ltr;
+}
+
+.rtl {
+  direction: rtl;
+}
+
+/* 23️⃣ Dark mode media query fallback */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #000;
+    color: #fff;
+  }
+}
+/* END OF RESET CSS*/
+
 
 /* Basic */
 @-ms-viewport {
@@ -3169,5 +3380,6 @@ button:disabled,
 }
 
 .icon-pig {
+  display: inline;
   margin-block-end: -0.25rem;
 }
