@@ -3380,14 +3380,14 @@ button:disabled,
   padding-top: 0;
 }
 
-small {
+small, small.discl {
   margin-block-start: 4em;
   display: block;
   position: relative;
   color: #ababab;
 }
 
-small:before {
+small.discl:before {
   inset-block-start: -1.125rem;
   background: rgba(222, 225, 226, 0.1);
   content: "";
